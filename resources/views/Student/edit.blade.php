@@ -34,11 +34,11 @@
         </div>  
 
         <div class="form-group">
-            <label for="roll">Roll</label>
-            <input type="roll" value="{{ $student->roll }}" class="form-control" placeholder="Enter Roll" name="roll">
-            @if($errors->first('roll'))
+            <label for="student_id">Student ID</label>
+            <input type="student_id" value="{{ $student->student_id }}" class="form-control" placeholder="Enter ID" name="student_id">
+            @if($errors->first('student_id'))
             <div class="alert alert-danger"> 
-                {{ $errors->first('roll') }}        
+                {{ $errors->first('student_id') }}        
             </div>  
             @endif 
         </div>
@@ -84,7 +84,7 @@
             @endif 
         </div>
 
-        <!-- <div class="form-group">
+        <div class="form-group">
              <label for="">Gender</label>
              <select class="form-control" value="{{ $student->gender }}" name="gender" > 
                 <option value="">Select Gender</option>
@@ -96,7 +96,7 @@
                 {{ $errors->first('gender') }}        
             </div>  
             @endif 
-        </div> -->
+        </div>
 
         <div class="form-group">
             <label for="">Adviser</label>
@@ -107,14 +107,6 @@
             </div>  
             @endif
         </div>
-
-        <!-- <div class="form-group">
-            <label for="">Status</label>
-            <select name="status">
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-             </select>
-        </div> -->
 
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Update">

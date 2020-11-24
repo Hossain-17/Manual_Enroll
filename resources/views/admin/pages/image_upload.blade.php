@@ -50,10 +50,8 @@
                    // $('#prev').attr('src', e.target.result);
                   }
                   reader.readAsDataURL(input.files[i]);
-                }
-                
-              
-                 // convert to base64 string
+                }          
+                  // convert to base64 string
               }
             }
     </script>

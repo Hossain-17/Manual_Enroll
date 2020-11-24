@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Add</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
+@extends('admin.layouts.double')
+@section('abc')
+
+   <main>
+   <div class="container">
         <div class="jumbotron text-center">
            <h2>Add Student</h2>
             @if (Session::has('success'))
@@ -34,11 +29,11 @@
         </div>
 
         <div class="form-group">
-            <label for="roll">Roll</label>
-            <input type="roll" value="{{ old('roll') }}" class="form-control" placeholder="Enter Roll" name="roll">
-            @if($errors->first('roll'))
+            <label for="student_id">Student ID</label>
+            <input type="student_id" value="{{ old('student_id') }}" class="form-control" placeholder="Enter ID" name="student_id">
+            @if($errors->first('student_id'))
             <div class="alert alert-danger"> 
-                {{ $errors->first('roll') }}        
+                {{ $errors->first('student_id') }}        
             </div>  
             @endif 
         </div>
@@ -108,15 +103,6 @@
             @endif
         </div>
 
-        <!-- <div class="form-group">
-            <label for="">Status</label>
-            <select class="form-control" name="status" required>
-                <option value="">Select Status</option>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-             </select>
-        </div> -->
-
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Add">
             <a class="btn btn-secondary" href="{{ URL::to('students') }}">Back</a>
@@ -136,5 +122,5 @@
             </div>        
         </div>
     </div>
-</body>
-</html>
+   </main>
+@stop

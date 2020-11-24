@@ -19,6 +19,7 @@
                         <a class="dropdown-item" href="#">Activity Log</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ URL::to('logout') }}">Logout</a>
+                        
                     </div>
                 </li>
             </ul>

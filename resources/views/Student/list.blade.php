@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .modal{
-            color:#000;
-        }
-    </style>
-
-</head>
-<body>
+@extends('admin.layouts.double')
+@section('abc')
+<main>
     <div class="container">
         <div class="jumbotron text-center">
            <h2>List of Students</h2>
@@ -23,7 +11,7 @@
         <table class="table table-striped">
             <thead>
                 <th>Name</th>
-                <th>Roll</th>
+                <th>Student ID</th>
                 <th>Email</th>
                 <th>DOB</th>
                 <th>Semester</th>
@@ -37,7 +25,7 @@
         @foreach($students as $s)
              <tr>
                 <td>{{ $s-> name }}</td>
-                <td>{{ $s-> roll }}</td>
+                <td>{{ $s-> student_id }}</td>
                 <td>{{ $s-> email }}</td>
                 <td>{{ $s-> dob }}</td>
                 <td>{{ $s-> semester }}</td>
@@ -80,10 +68,5 @@
         
         </div>
     </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
-</html> 
+  </main>
+@stop

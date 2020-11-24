@@ -24,13 +24,13 @@
                                  </div>
                              </div>
                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                 <a class="small" href="password.html">Forgot Password?</a>
+                                 <a class="small" href="{{ URL::to('forgot') }}">Forgot Password?</a>
                                  <button class="btn btn-primary" type="submit">Login</button>
                              </div>
                             </form>
                        </div>
                      <div class="card-footer text-center">
-                           <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                           <div class="small"><a href="{{ URL::to('register') }}">Need an account? Sign up!</a></div>
                      </div>
                  </div>
              </div>

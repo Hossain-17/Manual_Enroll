@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\User;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -19,16 +21,16 @@ class StudentController extends Controller
     public function store(Request $req){
         $validatedData = $req->validate([
             'name' => 'required|max:50',
-            'roll' => 'required|max:13|unique:students,roll',
+            'student_id' => 'required|max:13|unique:students,student_id',
             'email' => 'required|email|unique:students,email',
-            'dob' => 'required|date|before:10/22/2020',
+            'dob' => 'required|date|before:11/26/2020',
             'semester' => 'required',
             'batch' => 'required',
             'gender' => 'required',
             'adviser' => 'required',
         ]);
         $name = $req->name;
-        $roll = $req->roll;
+        $student_id = $req->student_id;
         $email = $req->email;
         $dob = $req->dob;
         $semester = $req->semester;
@@ -39,7 +41,7 @@ class StudentController extends Controller
 
         $obj = new Student();
         $obj->name = $name;
-        $obj->roll = $roll;
+        $obj->student_id = $student_id;
         $obj->email = $email;
         $obj->dob = $dob;
         $obj->semester = $semester;
@@ -52,15 +54,9 @@ class StudentController extends Controller
             return redirect()->back()->with('success','Inserted Successfully');
         }
 
-        //insert into table_name (name, email), VALUES('','')
-
     }
 
     public function edit($id){
-        // fetch the detail of id=1 or 2 etc
-        // SELECT * from students WHERE id=2
-
-        //Student::find($id);   //id is pk; always return only one row
 
         $stud = Student::where('id','=',$id)
                ->first();            //only 1 row will be fetched
@@ -69,17 +65,16 @@ class StudentController extends Controller
         public function update(Request $req, $id ){
             $validatedData = $req->validate([
                 'name' => 'required|max:50',
-                'roll' => 'required|max:13',
-               // 'email' => 'required|email|unique:students,email',
-                'dob' => 'required|date|before:09/30/2020',
+                'student_id' => 'required|max:13',
+                'dob' => 'required|date|before:11/26/2020',
                 'semester' => 'required',
                 'batch' => 'required',
-                //'gender' => 'required',
+                'gender' => 'required',
                 'adviser' => 'required',
             ]);
 
         $name = $req->name;
-        $roll = $req->roll;
+        $student_id = $req->student_id;
         $email = $req->email;
         $dob = $req->dob;
         $semester = $req->semester;
@@ -90,7 +85,7 @@ class StudentController extends Controller
 
         $obj = Student::find($id);
         $obj->name = $name;
-        $obj->roll = $roll;
+        $obj->student_id = $student_id;
         $obj->email = $email;
         $obj->dob = $dob;
         $obj->semester = $semester;
@@ -108,5 +103,4 @@ class StudentController extends Controller
             $stud->delete();
             return redirect()->back()->with('success','Deleted');
         }
-
 }

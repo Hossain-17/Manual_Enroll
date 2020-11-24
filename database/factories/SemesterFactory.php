@@ -8,7 +8,7 @@ use illuminate\support\Str;
 
 $factory->define(Semester::class, function (Faker $faker) {
     return [
-            'student_id' => $faker->numberBetween($min = 10000, $max = 100000),
+            'student_id' => $faker->numberBetween($min = 1000, $max = 9999999999999),
             'course_code' => $faker->numberBetween($min = 100, $max = 999),
             'teachers' => $faker->name,
     ];

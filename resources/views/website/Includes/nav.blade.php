@@ -12,13 +12,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is ('about-us') ? 'active' : ''}}" href="{{ URL::to('/about-us') }}">About</a>
+            <a class="nav-link {{ Request::is ('profile') ? 'active' : ''}}" href="{{ URL::to('/profile') }}">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is ('services') ? 'active' : ''}}" href="{{ URL::to('/services') }}">Services</a>
+            <a class="nav-link {{ Request::is ('course') ? 'active' : ''}}" href="{{ URL::to('/course') }}">Course List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is ('contact') ? 'active' : ''}}" href="{{ URL::to('/contact') }}">Contact</a>
+            <a class="nav-link {{ Request::is ('dynamic-enroll') ? 'active' : ''}}" href="{{ URL::to('/dynamic-enroll') }}">Enrollment</a>
           </li>
         </ul>
       </div>

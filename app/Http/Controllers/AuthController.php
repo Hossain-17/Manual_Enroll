@@ -7,14 +7,15 @@ use Illuminate\Support\Facades\Hash;
 use Session;
 use App\User;
 class AuthController extends Controller
+
 {
     public function login(){
         if(Session::has('id')) {
             $user = User::where('id','=',session()->get('id'))->first();
-            if ($user->is_admin == 1)
+            if ($user->is_admin == 1 || $user->is_admin == 2)
                 return redirect()->to('dashboard');
             else
-             return redirect()->to('about-us');
+             return redirect()->to('/');
         }
         return view ('admin.pages.auth.login');
     }
@@ -25,11 +26,11 @@ class AuthController extends Controller
        if(Hash::check($password, $user->password)){
         Session::put('id',$user->id);
         Session::put('email',$user->email);
-        if ($user->is_admin == 1){
+        if ($user->is_admin == 1 || $user->is_admin == 2){
             return redirect()->to('dashboard');
         } 
         else {
-            return redirect()->to('about-us');
+            return redirect()->to('/');
         }   
     }else{
      return redirect()->to('login');
@@ -40,29 +41,4 @@ class AuthController extends Controller
         return redirect()->to('login');    
     }  
 }
-
-
-
-//    if($user!=null){
-    //        if(Hash::check($password, $user->password)){
-    //            Session::put('userid',$user->id);
-    //            Session::put('useremail',$user->email);
-    //            return redirect()->to('/dashboard');    
-    //        }else{
-    //         return redirect()->to('/login');
-    //        }
-    //     }else {
-    //         $student = Student::where('email','=',$email)->first();  //check student login
-    //         if($student!=null){
-    //             if(Hash::check($password, $student->password)){
-    //                 Session::put('studentid',$student->id);
-    //                 Session::put('studentemail',$student->email);
-    //                 return redirect()->to('/about-us');    
-    //             }else{
-    //                 return redirect()->to('/login');
-    //             } 
-    //         }
-    //         else{
-    //             return redirect()->to('/login');   
-    //         }        
-    //     }        
+  

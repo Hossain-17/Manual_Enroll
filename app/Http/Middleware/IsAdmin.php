@@ -18,9 +18,9 @@ class IsAdmin
     {
         $id=session()->get('id');
         $user=User::where('id','=',$id)->first();
-        if($user->is_admin != 1){
-            return redirect()->to('about-us');
+        if($user->is_admin == 1 || $user->is_admin == 2){
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->to('login');
     }
 }

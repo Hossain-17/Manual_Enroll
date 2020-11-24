@@ -1,9 +1,9 @@
 @extends('website.layouts.default')
 @section('content')
-<header class="jumbotron my-4">
-      <h1 class="display-4">Welcome to Manual Enrollment System</h1>
+  <header class="jumbotron my-4">
+      <h1 class="display-4">Manual Enrollment System</h1>
       <p class="lead">Where students can select their courses </p>
-      <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+      <a href="#" class="btn btn-primary btn-lg">Class Routine</a>
     </header>
    
     <div class="row text-center">

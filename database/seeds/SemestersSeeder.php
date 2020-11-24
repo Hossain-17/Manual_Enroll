@@ -11,6 +11,6 @@ class SemestersSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Semester::class, 100)->create();
+        factory(App\Semester::class, 70)->create();
     }
 }
