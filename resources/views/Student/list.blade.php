@@ -34,8 +34,7 @@
                 <td>{{ $s-> adviser }}</td>
                 <td>
                     <a class="btn btn-primary" href="{{ URL::to('edit-student/'.$s->id) }}">Edit</a>
-                    <button class="btn btn-danger" data-toggle="modal" data-target="#modal{{$s->id}}">Delete</button>
-                        
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#modal{{$s->id}}">Delete</button>                        
                     <div class="modal" id="modal{{ $s->id }}">
                         <div class="modal-dialog">
                         <div class="modal-content">

@@ -1,7 +1,6 @@
 @extends('admin.layouts.double')
 @section('abc')
-
-   <main>
+<main>
     <div class="container">
         <div class="jumbotron text-center">
            <h2>List of Teachers</h2>

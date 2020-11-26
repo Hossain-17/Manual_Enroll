@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ImageModel;
 use Image;
+
 class ImageController extends Controller
 {
     public function index(){

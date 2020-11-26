@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use App\User;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class StudentController extends Controller
 {
